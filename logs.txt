@@ -1,0 +1,25 @@
+* 6a8e45e Implement CountTasksPerCategory
+| *   01409ef Implement countTasksPerCategory
+| |\  
+| |/  
+|/|   
+* |   224ebd2 Merge branch 'master' into 7-count-tasks-per-category
+|\ \  
+| |/  
+| * 6fec42c Add starter code
+* |   90b6640 Merge branch 'master' into 7-count-tasks-per-category
+|\ \  
+| |/  
+| *   0410756 Merge pull request #10 from PetarMilovanovikj/2-find-all-completed-tasks
+| |\  
+| | * 396956b implement getCompletedTasks
+| * |   74595f0 Merge pull request #11 from PetarMilovanovikj/4-sort-tasks-by-priority
+| |\ \  
+| | |/  
+| |/|   
+| | * 7970341 Implement sortTasksByPriority
+| |/  
+* | 709e4da Implement countTasksPerCategory
+|/  
+* 6a0ef8c Add starter code
+* dc50e6e Initial commit
