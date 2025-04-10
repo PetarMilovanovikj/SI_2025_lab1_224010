@@ -81,6 +81,12 @@ class TaskManager {
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
         // TODO: Implement sorting by priority logic
+        Map<Priority, Integer> priorityOrder = new HashMap<>();
+        priorityOrder.put(Priority.HIGH, 1);
+        priorityOrder.put(Priority.MEDIUM, 2);
+        priorityOrder.put(Priority.LOW, 3);
+
+        tasks.sort(Comparator.comparingInt(task -> priorityOrder.get(task.getPriority())));
     }
 
     // 5. Filter tasks by category
@@ -120,7 +126,7 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
-
+	manager.sortTasksByPriority();
         manager.printTasks();
     }
 }
