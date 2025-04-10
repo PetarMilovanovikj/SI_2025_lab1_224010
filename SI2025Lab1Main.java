@@ -70,7 +70,13 @@ class TaskManager {
     // 2. Find all completed tasks
     public List<Task> getCompletedTasks() {
         // TODO: Implement logic to return completed tasks
-        return new ArrayList<>();
+	List<Task>completedTasks=new ArrayList<>();
+	for(Task task : tasks) {
+	if(task.isCompleted()){
+	completedTasks.add(task);
+	}
+	}
+	return completedTasks;
     }
 
     // 3. List tasks sorted by name
@@ -81,6 +87,12 @@ class TaskManager {
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
         // TODO: Implement sorting by priority logic
+        Map<Priority, Integer> priorityOrder = new HashMap<>();
+        priorityOrder.put(Priority.HIGH, 1);
+        priorityOrder.put(Priority.MEDIUM, 2);
+        priorityOrder.put(Priority.LOW, 3);
+
+        tasks.sort(Comparator.comparingInt(task -> priorityOrder.get(task.getPriority())));
     }
 
     // 5. Filter tasks by category
