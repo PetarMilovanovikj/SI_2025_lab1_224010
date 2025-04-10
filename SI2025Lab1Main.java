@@ -98,7 +98,14 @@ class TaskManager {
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
         // TODO: Implement counting logic
-        return new HashMap<>();
+        Map<String, Integer> categoryCount = new HashMap<>();
+
+        for (Task task : tasks) {
+            String category = task.getCategory();
+            categoryCount.put(category, categoryCount.getOrDefault(category, 0) + 1);
+        }
+
+        return categoryCount;
     }
 
     // 8. Mark a task as completed by name
@@ -112,15 +119,24 @@ class TaskManager {
     }
 }
 
-public class SI2025Lab1Main {
+public class Main {
     public static void main(String[] args) {
         TaskManager manager = new TaskManager();
         manager.addTask("Write report", Priority.HIGH, "Work");
         manager.addTask("Submit assignment", Priority.MEDIUM, "School");
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
+
         // MISSING: Calls to the new methods that will be implemented
+        //manager.printTasks();
+        Map<String, Integer> taskCounts = manager.countTasksPerCategory();
+
+        System.out.println("Task count per category:");
+        for (Map.Entry<String, Integer> entry : taskCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
 
         manager.printTasks();
+
     }
 }
